@@ -1,0 +1,13 @@
+services:
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    container_name: phpmyadmin
+    environment:
+      PMA_HOST: ${PMA_HOST:-host}
+      PMA_USER: ${PMA_HOST:-admin@gmail.com}
+      PMA_PASSWORD: ${PMA_PASSWORD:-12345678}
+    ports:
+      - "8080:80"
+    depends_on:
+      - mysql
+

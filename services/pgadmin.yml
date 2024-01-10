@@ -1,0 +1,12 @@
+services:
+  pgadmin:
+      image: ${PGADMIN_IMAGE:-dpage/pgadmin4:latest}
+      init: true
+      container_name: pg-con
+      hostname: pg
+      restart: always
+      environment:
+          - PGADMIN_DEFAULT_EMAIL=admin@gmail.com
+          - PGADMIN_DEFAULT_PASSWORD=12345678
+      ports:
+          - ${PGADMIN_PORT:-5050}:80
